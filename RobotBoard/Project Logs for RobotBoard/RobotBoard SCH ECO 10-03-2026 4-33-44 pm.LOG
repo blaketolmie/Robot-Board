@@ -1,0 +1,6 @@
+Change Component Comment: Designator=C35 Old Comment==Value New Comment=0.22uF
+Change Component Comment: Designator=C40 Old Comment==Value New Comment=10nF
+Change Pin Designator/Name:  Old Designator=C35-1 Old Name=1 New Designator =2 New Name=2
+Change Pin Designator/Name:  Old Designator=C35-2 Old Name=2 New Designator =1 New Name=1
+Change Pin Designator/Name:  Old Designator=Q1-2 Old Name=2 New Designator =3 New Name=3
+Change Pin Designator/Name:  Old Designator=Q1-3 Old Name=3 New Designator =2 New Name=2
