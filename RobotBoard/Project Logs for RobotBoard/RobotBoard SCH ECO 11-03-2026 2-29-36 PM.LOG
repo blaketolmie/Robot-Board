@@ -1,0 +1,4 @@
+Change Pin Designator/Name:  Old Designator=U3A-11 Old Name=AD8/RXD1/PA21 New Designator =AD9/TXD1/PA22 New Name=14
+Change Pin Designator/Name:  Old Designator=U3A-13 Old Name=AD2/PWML0/PA19 New Designator =AD8/RXD1/PA21 New Name=11
+Change Pin Designator/Name:  Old Designator=U3A-14 Old Name=AD9/TXD1/PA22 New Designator =AD3/PWML1/PA20 New Name=16
+Change Pin Designator/Name:  Old Designator=U3A-16 Old Name=AD3/PWML1/PA20 New Designator =AD2/PWML0/PA19 New Name=13
