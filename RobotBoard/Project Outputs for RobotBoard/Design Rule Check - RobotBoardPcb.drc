@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\911BL\OneDrive - University of Canterbury\2026\ENCE461\Wacky Racers\Robot-Board\RobotBoard\RobotBoardPcb.PcbDoc
 Date     : 16/03/2026
-Time     : 11:44:50 am
+Time     : 11:52:41 am
 
 Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
 Rule Violations :0
@@ -27,7 +27,6 @@ Processing Rule : SMD To Plane Constraint (Distance=5mm) (All)
    Violation between SMD To Plane Constraint: Pad C20-2(46.75mm,9.8mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Between Pad C28-1(11mm,60.3mm) on Top Layer And Via (9.8mm,41.2mm) from Top Layer to Bottom Layer Actual Distance = 20.024mm
    Violation between SMD To Plane Constraint: Between Pad C29-2(48.6mm,32.8mm) on Top Layer And Via (48.2mm,43.5mm) from Top Layer to Bottom Layer Actual Distance = 10.292mm
-   Violation between SMD To Plane Constraint: Pad GND-1(24.5mm,36.3mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad Q2-2(1.994mm,47.688mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad Q4-2(49.85mm,8.85mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Between Pad Q7-2(60.45mm,48.9mm) on Top Layer And Via (50.9mm,41.4mm) from Top Layer to Bottom Layer Actual Distance = 14.617mm
@@ -39,7 +38,7 @@ Processing Rule : SMD To Plane Constraint (Distance=5mm) (All)
    Violation between SMD To Plane Constraint: Pad U8-2(3.786mm,66.9mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Between Pad U9-1(9.6mm,60.6mm) on Top Layer And Via (9.8mm,41.2mm) from Top Layer to Bottom Layer Actual Distance = 19.324mm
    Violation between SMD To Plane Constraint: Pad U9-2(9.6mm,61.55mm) on Top Layer Actual Distance = 2539.975mm
-Rule Violations :16
+Rule Violations :15
 
 Processing Rule : SMD Neck-Down Constraint (Percent=50%) (Disabled)(All)
 Rule Violations :0
@@ -62,6 +61,7 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=0.102mm) (All),(All)
    Violation between Minimum Solder Mask Sliver Constraint: (0.062mm < 0.102mm) Between Pad C43-1(58.35mm,36.8mm) on Top Layer And Via (59.8mm,36.9mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.062mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.062mm < 0.102mm) Between Pad C53-2(61mm,14.9mm) on Top Layer And Via (61mm,13.6mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.062mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.084mm < 0.102mm) Between Pad DL2-2(27.4mm,68.6mm) on Top Layer And Via (27.5mm,70.2mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.084mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.012mm < 0.102mm) Between Pad GND-1(24.5mm,36.3mm) on Top Layer And Via (27.1mm,35.8mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.012mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.012mm < 0.102mm) Between Pad R52-1(54.95mm,52.7mm) on Top Layer And Via (55.1mm,54mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.012mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.098mm < 0.102mm) Between Pad R8-1(22.075mm,54.282mm) on Top Layer And Via (22.9mm,55.3mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.098mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.004mm < 0.102mm) Between Pad R8-2(20.925mm,53.318mm) on Top Layer And Via (19.5mm,53.3mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.004mm]
@@ -92,7 +92,7 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=0.102mm) (All),(All)
    Violation between Minimum Solder Mask Sliver Constraint: (0.027mm < 0.102mm) Between Via (45.2mm,32.9mm) from Top Layer to Bottom Layer And Via (46.7mm,32.9mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.027mm] / [Bottom Solder] Mask Sliver [0.027mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.05mm < 0.102mm) Between Via (54.5mm,55.4mm) from Top Layer to Bottom Layer And Via (55.1mm,54mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.05mm] / [Bottom Solder] Mask Sliver [0.05mm]
    Violation between Minimum Solder Mask Sliver Constraint: (0.03mm < 0.102mm) Between Via (7.4mm,49.1mm) from Top Layer to Bottom Layer And Via (7.5mm,50.6mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.03mm] / [Bottom Solder] Mask Sliver [0.03mm]
-Rule Violations :35
+Rule Violations :36
 
 Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
    Violation between Silk To Silk Clearance Constraint: (0.073mm < 0.254mm) Between Text "
