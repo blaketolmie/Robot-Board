@@ -1,0 +1,3 @@
+Change Designator: Invalid Designator
+Added Pin To Net: NetName=RADIO_OFF Pin=U3-26
+Added Member To Class: ClassName=RobotBoard Member=Component  Header 5X2 Vert

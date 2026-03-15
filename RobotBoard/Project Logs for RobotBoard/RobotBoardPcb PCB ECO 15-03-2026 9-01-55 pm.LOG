@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=DIP_SW_3 Pin=U3-34
+Change Designator: Invalid Designator
+Added Pin To Net: NetName=DIP_SW_3 Pin=U3-11
+Added Pin To Net: NetName=STAT0 Pin=U3-26
+Added Pin To Net: NetName=IMU INT1 Pin=U3-34
+Added Member To Class: ClassName=RobotBoard Member=Component  Header 5X2 Vert
