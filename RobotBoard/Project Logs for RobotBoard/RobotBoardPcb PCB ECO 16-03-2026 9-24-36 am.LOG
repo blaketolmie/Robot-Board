@@ -1,0 +1,132 @@
+Removed Pin From Net: NetName=VDD 5V Pin=C34-2
+Removed Pin From Net: NetName=VDD 5V Pin=C35-1
+Removed Pin From Net: NetName=VDD 5V Pin=C43-2
+Removed Pin From Net: NetName=VDD 5V Pin=CAMERA-1
+Removed Pin From Net: NetName=VDD 5V Pin=VTX-1
+Change Designator: Invalid Designator
+Added Component: Designator=Q7(SOT23_L)
+Add component (AddParameter): Name = "Case/Package"; Value = "SOT-23-3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com/11158/ssm3j328r-datasheet-en-20140301-11158652.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com/11158/ssm3j328r-datasheet-en-20140301-11158652.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Continuous Drain Current (ID)"; Value = "6A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Current - Continuous Drain (Id) @ 25° C"; Value = "6A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Drain to Source Breakdown Voltage"; Value = "-20V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Drain to Source Resistance"; Value = "47.4mR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Drain to Source Voltage (Vdss)"; Value = "20V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Element Configuration"; Value = "Single"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "FET Feature"; Value = "Logic Level Gate, 1.5V Drive"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "FET Type"; Value = "MOSFET P-Channel, Metal Oxide"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gate Charge (Qg) @ Vgs"; Value = "12.8nC @ 4.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gate to Source Voltage (Vgs)"; Value = "8V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Input Capacitance"; Value = "840pF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Input Capacitance (Ciss) @ Vds"; Value = "840pF @ 10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Toshiba"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "SSM3J328R,LF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "150°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Power Dissipation"; Value = "1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-55°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Channels"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Elements"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "SOT-23-3 Flat Leads"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "3000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tape and Reel"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power - Max"; Value = "1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power Dissipation"; Value = "2W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.79, 10=0.658, 25=0.5772, 100=0.4939, 250=0.42836, 500=0.36284, 1000=0.27972 (NZD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rds On Max"; Value = "29.8mR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Storage Location"; Value = "PCB Assembly WS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Device Package"; Value = "SOT-23F"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number"; Value = "SSM3J328RLFDKR-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "SSM3J328RLFDKR-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Turn-Off Delay Time"; Value = "107ns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Turn-On Delay Time"; Value = "32ns"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Vgs(th) (Max) @ Id"; Value = "1V @ 1mA"; VariantName = "[No Variations]"
+Added Component: Designator=R50(RESC1608L)
+Add component (AddParameter): Name = "Storage Location"; Value = "PCB Assembly WS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0R"; VariantName = "[No Variations]"
+Added Component: Designator=R51(RESC1608L)
+Add component (AddParameter): Name = "Storage Location"; Value = "PCB Assembly WS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Component: Designator=R52(RESC1608L)
+Add component (AddParameter): Name = "Storage Location"; Value = "PCB Assembly WS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Added Component: Designator=R53(RESC1608L)
+Add component (AddParameter): Name = "Storage Location"; Value = "PCB Assembly WS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Component: Designator=T4(SOT23_L)
+Add component (AddParameter): Name = "Current - Continuous Drain (Id) @ 25° C"; Value = "1.05A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Drain to Source Voltage (Vdss)"; Value = "20V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "FET Type"; Value = "MOSFET N-Channel, Metal Oxide"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Gate Charge (Qg) @ Vgs"; Value = "3.9nC @ 4.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Input Capacitance (Ciss) @ Vds"; Value = "152pF @ 16V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "NXP Semiconductors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "BSH105,215"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "TO-236-3, SC-59, SOT-23-3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Power - Max"; Value = "417mW"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing"; Value = "1=0.53, 10=0.42, 25=0.3544, 100=0.2885, 250=0.23896, 500=0.1974, 1000=0.14785 (NZD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Rds On (Max) @ Id, Vgs"; Value = "200 mOhm @ 600mA, 4.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Storage Location"; Value = "PCB Assembly WS"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 2"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1758066"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 2"; Value = "568-6215-1-ND"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VDD 5V Pin=Q7-2
+Added Pin To Net: NetName=GND Pin=R51-2
+Added Pin To Net: NetName=VDD 5V Pin=R53-1
+Added Pin To Net: NetName=GND Pin=T4-2
+Change Net Name : Old Net Name=NetP1_1 New Net Name=NetRight Motor_1
+Change Net Name : Old Net Name=NetP1_2 New Net Name=NetRight Motor_2
+Change Net Name : Old Net Name=NetP2_1 New Net Name=NetLeft Motor_1
+Change Net Name : Old Net Name=NetP2_2 New Net Name=NetLeft Motor_2
+Added Pin To Net: NetName=FPV ENABLE Pin=R51-1
+Added Pin To Net: NetName=FPV ENABLE Pin=R52-1
+Added Pin To Net: NetName=FPV ENABLE Pin=U3-19
+Added Net: Name=FPV ENABLE
+Added Pin To Net: NetName=NetC34_2 Pin=C34-2
+Added Pin To Net: NetName=NetC34_2 Pin=C35-1
+Added Pin To Net: NetName=NetC34_2 Pin=C43-2
+Added Pin To Net: NetName=NetC34_2 Pin=CAMERA-1
+Added Pin To Net: NetName=NetC34_2 Pin=Q7-3
+Added Pin To Net: NetName=NetC34_2 Pin=VTX-1
+Added Net: Name=NetC34_2
+Added Pin To Net: NetName=NetQ7_1 Pin=Q7-1
+Added Pin To Net: NetName=NetQ7_1 Pin=R50-1
+Added Pin To Net: NetName=NetQ7_1 Pin=R53-2
+Added Net: Name=NetQ7_1
+Added Pin To Net: NetName=NetR50_2 Pin=R50-2
+Added Pin To Net: NetName=NetR50_2 Pin=T4-3
+Added Net: Name=NetR50_2
+Added Pin To Net: NetName=NetR52_2 Pin=R52-2
+Added Pin To Net: NetName=NetR52_2 Pin=T4-1
+Added Net: Name=NetR52_2
+Added Member To Class: ClassName=RobotBoard Member=Component Left Motor JA_PIN_Header 2
+Added Member To Class: ClassName=RobotBoard Member=Component Q7 SSM3J328R,LF
+Added Member To Class: ClassName=RobotBoard Member=Component R50 0R
+Added Member To Class: ClassName=RobotBoard Member=Component R51 10K
+Added Member To Class: ClassName=RobotBoard Member=Component R52 1K
+Added Member To Class: ClassName=RobotBoard Member=Component R53 10K
+Added Member To Class: ClassName=RobotBoard Member=Component Right Motor JA_PIN_Header 2
+Added Member To Class: ClassName=RobotBoard Member=Component T4 BSH105,215
+Added Member To Class: ClassName=RobotBoard Member=Component  47K
+Added Member To Class: ClassName=RobotBoard Member=Component  Header 5X2 Vert
+Added Member To Class: ClassName=RobotBoard Member=Component TP3 TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component TP7 TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component TP8 TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component U2 ADXL345BCCZ
+Added Member To Class: ClassName=RobotBoard Member=Component U6 DRV8833
+Added Member To Class: ClassName=RobotBoard Member=Component U8 nRF24 SMD
+Added Member To Class: ClassName=RobotBoard Member=Component U9 CAT6219-330TDGT3
+Added Member To Class: ClassName=RobotBoard Member=Component U10 SN74LVC1T45
+Added Member To Class: ClassName=RobotBoard Member=Component VDD 3.3V TP
+Added Member To Class: ClassName=RobotBoard Member=Component VTX JA_PIN_Header 4
+Added Member To Class: ClassName=RobotBoard Member=Component Y1 12MHz
