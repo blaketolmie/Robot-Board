@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\911BL\OneDrive - University of Canterbury\2026\ENCE461\Wacky Racers\Robot-Board\RobotBoard\RobotBoardPcb.PcbDoc
 Date     : 16/03/2026
-Time     : 11:19:30 am
+Time     : 11:44:50 am
 
 Processing Rule : Clearance Constraint (Gap=0.2mm) (All),(All)
 Rule Violations :0
@@ -25,19 +25,19 @@ Rule Violations :1
 Processing Rule : SMD To Plane Constraint (Distance=5mm) (All)
    Violation between SMD To Plane Constraint: Pad C1-1(32.8mm,69.1mm) on Bottom Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad C20-2(46.75mm,9.8mm) on Top Layer Actual Distance = 2539.975mm
-   Violation between SMD To Plane Constraint: Between Pad C28-1(11mm,60.3mm) on Top Layer And Via (9.8mm,41.2mm) from Top Layer to Bottom Layer Actual Distance = 20.285mm
+   Violation between SMD To Plane Constraint: Between Pad C28-1(11mm,60.3mm) on Top Layer And Via (9.8mm,41.2mm) from Top Layer to Bottom Layer Actual Distance = 20.024mm
    Violation between SMD To Plane Constraint: Between Pad C29-2(48.6mm,32.8mm) on Top Layer And Via (48.2mm,43.5mm) from Top Layer to Bottom Layer Actual Distance = 10.292mm
    Violation between SMD To Plane Constraint: Pad GND-1(24.5mm,36.3mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad Q2-2(1.994mm,47.688mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad Q4-2(49.85mm,8.85mm) on Top Layer Actual Distance = 2539.975mm
-   Violation between SMD To Plane Constraint: Between Pad Q7-2(60.45mm,48.9mm) on Top Layer And Via (50.9mm,41.2mm) from Top Layer to Bottom Layer Actual Distance = 15.411mm
+   Violation between SMD To Plane Constraint: Between Pad Q7-2(60.45mm,48.9mm) on Top Layer And Via (50.9mm,41.4mm) from Top Layer to Bottom Layer Actual Distance = 14.617mm
    Violation between SMD To Plane Constraint: Pad R53-1(60.75mm,50.6mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad T2-2(47.45mm,4.246mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad U10-2(46.2mm,30.25mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad U10-6(48.6mm,31.2mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad U1-2(45.15mm,40.8mm) on Top Layer Actual Distance = 2539.975mm
    Violation between SMD To Plane Constraint: Pad U8-2(3.786mm,66.9mm) on Top Layer Actual Distance = 2539.975mm
-   Violation between SMD To Plane Constraint: Between Pad U9-1(9.6mm,60.6mm) on Top Layer And Via (9.8mm,41.2mm) from Top Layer to Bottom Layer Actual Distance = 19.416mm
+   Violation between SMD To Plane Constraint: Between Pad U9-1(9.6mm,60.6mm) on Top Layer And Via (9.8mm,41.2mm) from Top Layer to Bottom Layer Actual Distance = 19.324mm
    Violation between SMD To Plane Constraint: Pad U9-2(9.6mm,61.55mm) on Top Layer Actual Distance = 2539.975mm
 Rule Violations :16
 
@@ -127,4 +127,4 @@ Rule Violations :0
 
 Violations Detected : 55
 Waived Violations : 0
-Time Elapsed        : 00:00:03
+Time Elapsed        : 00:00:02
