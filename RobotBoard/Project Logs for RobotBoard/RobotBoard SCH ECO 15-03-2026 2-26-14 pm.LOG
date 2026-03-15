@@ -1,0 +1,4 @@
+Add Pin To Net: Pin=U3A-11 Old Net=STAT0 New Net=DIP_SW_3
+Change Pin Designator/Name:  Old Designator=U3A-3 Old Name=PB0/PWMH0/AD4 New Designator =PB5/PWML0/TDO New Name=49
+Change Pin Designator/Name:  Old Designator=U3A-11 Old Name=AD8/RXD1/PA21 New Designator =PA26 New Name=26
+Change Pin Designator/Name:  Old Designator=U3A-49 Old Name=PB5/PWML0/TDO New Designator =PB0/PWMH0/AD4 New Name=3

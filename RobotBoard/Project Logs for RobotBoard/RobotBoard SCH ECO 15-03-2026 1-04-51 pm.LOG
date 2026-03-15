@@ -1,0 +1,7 @@
+Remove Pin=U3A-14 From Net=H-BRIDGE FAULT
+Add Pin To Net: Pin=U3A-14 Old Net=H-BRIDGE FAULT New Net=DIP_SW_4
+Add Pin To Net: Pin=U3A-52 Old Net=DIP_SW_3 New Net=STAT0
+Change Pin Designator/Name:  Old Designator=U3A-9 Old Name=AD0/PWMH3/PA17 New Designator =PB0/PWMH0/AD4 New Name=3
+Change Pin Designator/Name:  Old Designator=U3A-10 Old Name=AD1/PA18 New Designator =AD0/PWMH3/PA17 New Name=9
+Change Pin Designator/Name:  Old Designator=U3A-11 Old Name=AD8/RXD1/PA21 New Designator =AD1/PA18 New Name=10
+Change Pin Designator/Name:  Old Designator=U3A-52 Old Name=PA31 New Designator =AD8/RXD1/PA21 New Name=11

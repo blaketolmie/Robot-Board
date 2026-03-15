@@ -1,0 +1,2 @@
+Remove Pin=U3A-14 From Net=DIP_SW_4
+Change Component Designator: OldDesignator=R4 NewDesignator= 
