@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=FPV ENABLE Pin=U3-19
+Removed Pin From Net: NetName=STAT1 Pin=U3-47
+Added Pin To Net: NetName=STAT1 Pin=U3-19
+Added Pin To Net: NetName=FPV ENABLE Pin=U3-47
