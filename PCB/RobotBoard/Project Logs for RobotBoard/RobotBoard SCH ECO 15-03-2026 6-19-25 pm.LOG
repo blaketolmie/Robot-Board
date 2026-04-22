@@ -1,0 +1,12 @@
+Change Component Designator: OldDesignator=TP1 NewDesignator=VDD 3.3V
+Change Component Designator: OldDesignator=TP6 NewDesignator=LED
+Add Pin To Net: Pin=U3A-26 Old Net=STAT0 New Net=RADIO_OFF
+Change Pin Designator/Name:  Old Designator=U3A-4 Old Name=PB1/PWMH1/AD5 New Designator =PB2/AD6 New Name=5
+Change Pin Designator/Name:  Old Designator=U3A-5 Old Name=PB2/AD6 New Designator =PWML3/PA15 New Name=20
+Change Pin Designator/Name:  Old Designator=U3A-15 Old Name=PWMH0/PA23 New Designator =PWMH0/PA0 New Name=48
+Change Pin Designator/Name:  Old Designator=U3A-20 Old Name=PWML3/PA15 New Designator =PA27 New Name=37
+Change Pin Designator/Name:  Old Designator=U3A-26 Old Name=PA26 New Designator =PB1/PWMH1/AD5 New Name=4
+Change Pin Designator/Name:  Old Designator=U3A-28 Old Name=PWMH0/PA11 New Designator =TXD0/PA6 New Name=34
+Change Pin Designator/Name:  Old Designator=U3A-29 Old Name=PA10 New Designator =PWMH0/PA11 New Name=28
+Change Pin Designator/Name:  Old Designator=U3A-37 Old Name=PA27 New Designator =PA10 New Name=29
+Change Pin Designator/Name:  Old Designator=U3A-48 Old Name=PWMH0/PA0 New Designator =PWMH0/PA23 New Name=15

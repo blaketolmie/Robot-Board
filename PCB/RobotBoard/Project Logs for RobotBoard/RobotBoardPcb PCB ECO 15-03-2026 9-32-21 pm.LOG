@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=STAT1 Pin=U3-6
+Change Designator: Invalid Designator
+Added Pin To Net: NetName=STAT1 Pin=U3-47
+Added Member To Class: ClassName=RobotBoard Member=Component  Header 5X2 Vert

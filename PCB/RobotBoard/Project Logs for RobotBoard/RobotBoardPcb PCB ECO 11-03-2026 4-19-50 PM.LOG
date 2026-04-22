@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=Bumper Pin=U3-10
+Removed Pin From Net: NetName=DIP_SW_1 Pin=U3-11
+Removed Pin From Net: NetName=DIP_SW_2 Pin=U3-13
+Removed Pin From Net: NetName=DIP_SW_3 Pin=U3-14
+Removed Pin From Net: NetName=DIP_SW_4 Pin=U3-16
+Removed Pin From Net: NetName=Servo2 Pin=U3-23
+Removed Pin From Net: NetName=Servo1 Pin=U3-25
+Removed Pin From Net: NetName=DC2 OUT Pin=U3-38
+Removed Pin From Net: NetName=DC2 IN Pin=U3-41
+Removed Pin From Net: NetName=DC1 OUT Pin=U3-42
+Removed Pin From Net: NetName=DC1 IN Pin=U3-52
+Added Pin To Net: NetName=DIP_SW_1 Pin=U3-10
+Added Pin To Net: NetName=DIP_SW_2 Pin=U3-11
+Added Pin To Net: NetName=DC2 IN Pin=U3-13
+Added Pin To Net: NetName=DIP_SW_4 Pin=U3-14
+Added Pin To Net: NetName=DC1 OUT Pin=U3-16
+Added Pin To Net: NetName=DC2 OUT Pin=U3-23
+Added Pin To Net: NetName=DC1 IN Pin=U3-25
+Added Pin To Net: NetName=Bumper Pin=U3-38
+Added Pin To Net: NetName=DIP_SW_3 Pin=U3-52
+Added Member To Class: ClassName=U_RobotPower Member=Component L2 IND 5.2UH 6A

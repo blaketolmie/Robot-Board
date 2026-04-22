@@ -1,0 +1,59 @@
+Removed Pin From Net: NetName=STAT0 Pin=U3-4
+Removed Pin From Net: NetName=DIP_SW_3 Pin=U3-11
+Removed Pin From Net: NetName=RADIO_OFF Pin=U3-26
+Removed Pin From Net: NetName=LED_Strip_Leveled Pin=U3-52
+Change Designator: Invalid Designator
+Added Component: Designator=MT1(MNT-HOLE_4.2mm_NPTH)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Hi-Q"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer PN"; Value = "4NE Series M4 Clearance"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "price"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "value"; Value = "M4.2 NPTH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Verify"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=MT2(MNT-HOLE_4.2mm_NPTH)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Hi-Q"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer PN"; Value = "4NE Series M4 Clearance"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "price"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "value"; Value = "M4.2 NPTH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Verify"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=MT3(MNT-HOLE_4.2mm_NPTH)
+Add component (AddParameter): Name = "Manufacturer"; Value = "Hi-Q"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer PN"; Value = "4NE Series M4 Clearance"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "note"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "price"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "ECE Dept"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "value"; Value = "M4.2 NPTH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Verify"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=LED_Strip_Leveled Pin=U3-26
+Added Pin To Net: NetName=STAT0 Pin=U3-26
+Change Net Name : Old Net Name=NetTP2_1 New Net Name=NetERASE_1
+Added Member To Class: ClassName=RobotBoard Member=Component C34 10uF
+Added Member To Class: ClassName=RobotBoard Member=Component C43 47uF
+Added Member To Class: ClassName=RobotBoard Member=Component C50 100nF
+Added Member To Class: ClassName=RobotBoard Member=Component C51 100nF
+Added Member To Class: ClassName=RobotBoard Member=Component C52 100nF
+Added Member To Class: ClassName=RobotBoard Member=Component C53 100nF
+Added Member To Class: ClassName=RobotBoard Member=Component C55 100nF
+Added Member To Class: ClassName=RobotBoard Member=Component CAMERA JA_PIN_Header 3
+Added Member To Class: ClassName=RobotBoard Member=Component ERASE TP
+Added Member To Class: ClassName=RobotBoard Member=Component LED TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component MT1 M4.2 NPTH
+Added Member To Class: ClassName=RobotBoard Member=Component MT2 M4.2 NPTH
+Added Member To Class: ClassName=RobotBoard Member=Component MT3 M4.2 NPTH
+Added Member To Class: ClassName=RobotBoard Member=Component R11 10K
+Added Member To Class: ClassName=RobotBoard Member=Component S1 EVQPNF05M
+Added Member To Class: ClassName=RobotBoard Member=Component  47K
+Added Member To Class: ClassName=RobotBoard Member=Component  Header 5X2 Vert
+Added Member To Class: ClassName=RobotBoard Member=Component TP3 TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component TP7 TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component TP8 TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component U2 ADXL345BCCZ
+Added Member To Class: ClassName=RobotBoard Member=Component U8 nRF24 SMD
+Added Member To Class: ClassName=RobotBoard Member=Component U9 CAT6219-330TDGT3
+Added Member To Class: ClassName=RobotBoard Member=Component U10 SN74LVC1T45
+Added Member To Class: ClassName=RobotBoard Member=Component VDD 3.3V TP
+Added Member To Class: ClassName=RobotBoard Member=Component VTX JA_PIN_Header 4
+Added Member To Class: ClassName=RobotBoard Member=Component Y1 12MHz

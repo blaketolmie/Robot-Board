@@ -1,0 +1,15 @@
+Change Designator: Invalid Designator
+Added Pin To Net: NetName=LED_Strip_Leveled Pin=U3-26
+Added Pin To Net: NetName=DIP_SW_3 Pin=U3-34
+Added Member To Class: ClassName=RobotBoard Member=Component  47K
+Added Member To Class: ClassName=RobotBoard Member=Component  Header 5X2 Vert
+Added Member To Class: ClassName=RobotBoard Member=Component TP3 TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component TP7 TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component TP8 TP_0805
+Added Member To Class: ClassName=RobotBoard Member=Component U2 ADXL345BCCZ
+Added Member To Class: ClassName=RobotBoard Member=Component U8 nRF24 SMD
+Added Member To Class: ClassName=RobotBoard Member=Component U9 CAT6219-330TDGT3
+Added Member To Class: ClassName=RobotBoard Member=Component U10 SN74LVC1T45
+Added Member To Class: ClassName=RobotBoard Member=Component VDD 3.3V TP
+Added Member To Class: ClassName=RobotBoard Member=Component VTX JA_PIN_Header 4
+Added Member To Class: ClassName=RobotBoard Member=Component Y1 12MHz

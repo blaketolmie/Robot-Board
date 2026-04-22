@@ -1,0 +1,84 @@
+Removed Pin From Net: NetName=GND Pin=C10-1
+Removed Pin From Net: NetName=GND Pin=C28-1
+Removed Pin From Net: NetName=GND Pin=C30-2
+Removed Pin From Net: NetName=GND Pin=C31-1
+Removed Pin From Net: NetName=GND Pin=C31-2
+Removed Pin From Net: NetName=GND Pin=C32-2
+Removed Pin From Net: NetName=GND Pin=C33-2
+Removed Pin From Net: NetName=GND Pin=C34-2
+Removed Pin From Net: NetName=GND Pin=C36-2
+Removed Pin From Net: NetName=GND Pin=C37-1
+Removed Pin From Net: NetName=GND Pin=C37-2
+Removed Pin From Net: NetName=GND Pin=C43-2
+Removed Pin From Net: NetName=GND Pin=CAMERA-1
+Removed Pin From Net: NetName=GND Pin=H4-1
+Removed Pin From Net: NetName=GND Pin=P3-2
+Removed Pin From Net: NetName=GND Pin=P4-2
+Removed Pin From Net: NetName=GND Pin=Q4-2
+Removed Pin From Net: NetName=MOS-OFF-SIGNAL Pin=R25-1
+Removed Pin From Net: NetName=MOS-OFF-SIGNAL Pin=R26-1
+Removed Pin From Net: NetName=GND Pin=R28-1
+Removed Pin From Net: NetName=GND Pin=R30-2
+Removed Pin From Net: NetName=NetR33_2 Pin=R40-1
+Removed Pin From Net: NetName=GND Pin=R40-2
+Removed Pin From Net: NetName=GND Pin=U1-1
+Removed Pin From Net: NetName=GND Pin=U1-3
+Removed Pin From Net: NetName=DIP_SW_2 Pin=U3-11
+Removed Pin From Net: NetName=DIP_SW_4 Pin=U3-13
+Removed Pin From Net: NetName=DIP_SW_1 Pin=U3-14
+Removed Pin From Net: NetName=DIP_SW_3 Pin=U3-16
+Removed Pin From Net: NetName=GND Pin=U9-1
+Removed Pin From Net: NetName=GND Pin=U10-1
+Removed Pin From Net: NetName=GND Pin=VTX-1
+Add component: Footprint Not Found CAPC1608L
+Add component: Footprint Not Found CAPC1608L
+Add component: Footprint Not Found CAPC1608L
+Add component: Footprint Not Found CAPC1608L
+Add component: Footprint Not Found CAPC1608L
+Add component: Footprint Not Found RESC1608L
+Add Pin To Net: Unknown Pin: Pin C50-1
+Add Pin To Net: Unknown Pin: Pin C50-2
+Add Pin To Net: Unknown Pin: Pin C51-1
+Add Pin To Net: Unknown Pin: Pin C51-2
+Add Pin To Net: Unknown Pin: Pin C52-1
+Add Pin To Net: Unknown Pin: Pin C53-1
+Add Pin To Net: Unknown Pin: Pin C55-1
+Add Pin To Net: Unknown Pin: Pin R?-1
+Add Pin To Net: Unknown Pin: Pin R?-2
+Added Pin To Net: NetName=DIP_SW_1 Pin=U3-11
+Added Pin To Net: NetName=DIP_SW_2 Pin=U3-13
+Added Pin To Net: NetName=DIP_SW_3 Pin=U3-14
+Added Pin To Net: NetName=DIP_SW_4 Pin=U3-16
+Change Net Name : Old Net Name=MOS-OFF-SIGNAL New Net Name=IMU ENABLE
+Added Pin To Net: NetName=H-BRIDGE-ENABLE Pin=R25-1
+Added Pin To Net: NetName=H-BRIDGE-ENABLE Pin=R26-1
+Added Pin To Net: NetName=H-BRIDGE-ENABLE Pin=U3-15
+Added Net: Name=H-BRIDGE-ENABLE
+Added Pin To Net: NetName=NetCAMERA_3 Pin=CAMERA-3
+Added Pin To Net: NetName=NetCAMERA_3 Pin=VTX-3
+Added Net: Name=NetCAMERA_3
+Added Pin To Net: NetName=VDD 5V Pin=C10-1
+Added Pin To Net: NetName=VDD 5V Pin=C28-1
+Added Pin To Net: NetName=VDD 5V Pin=C30-2
+Added Pin To Net: NetName=VDD 5V Pin=C34-2
+Added Pin To Net: NetName=VDD 5V Pin=C35-1
+Added Pin To Net: NetName=VDD 5V Pin=C43-2
+Added Pin To Net: NetName=VDD 5V Pin=CAMERA-1
+Added Pin To Net: NetName=VDD 5V Pin=H4-1
+Added Pin To Net: NetName=VDD 5V Pin=P3-2
+Added Pin To Net: NetName=VDD 5V Pin=P4-2
+Added Pin To Net: NetName=VDD 5V Pin=Q4-2
+Added Pin To Net: NetName=VDD 5V Pin=R28-1
+Added Pin To Net: NetName=VDD 5V Pin=R30-2
+Added Pin To Net: NetName=VDD 5V Pin=U1-1
+Added Pin To Net: NetName=VDD 5V Pin=U1-3
+Added Pin To Net: NetName=VDD 5V Pin=U9-1
+Added Pin To Net: NetName=VDD 5V Pin=U10-1
+Added Pin To Net: NetName=VDD 5V Pin=VTX-1
+Added Net: Name=VDD 5V
+Add Class Member: Failed to add class member : Component C50 100nF
+Add Class Member: Failed to add class member : Component C51 100nF
+Add Class Member: Failed to add class member : Component C52 100nF
+Add Class Member: Failed to add class member : Component C53 100nF
+Add Class Member: Failed to add class member : Component C55 100nF
+Add Class Member: Failed to add class member : Component R? 33K

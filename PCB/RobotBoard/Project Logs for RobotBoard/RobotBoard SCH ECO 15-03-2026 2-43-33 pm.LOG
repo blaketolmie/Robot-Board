@@ -1,0 +1,6 @@
+Remove Pin=U3A-6 From Net=RADIO_OFF
+Remove Pin=U3A-26 From Net=DIP_SW_3
+Add Pin To Net: Pin=U3A-6 Old Net=RADIO_OFF New Net=STAT0
+Add Pin To Net: Pin=U3A-26 Old Net=DIP_SW_3 New Net=STAT0
+Add Pin To Net: Pin=U3A-41 Old Net=NetU3_41 New Net=Servo2
+Add Pin To Net: Pin=U3A-42 Old Net=NetU3_42 New Net=Servo1

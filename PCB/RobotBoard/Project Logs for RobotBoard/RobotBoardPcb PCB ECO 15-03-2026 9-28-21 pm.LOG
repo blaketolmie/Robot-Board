@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=STAT0 Pin=U3-15
+Removed Pin From Net: NetName=STAT0 Pin=U3-26
+Removed Pin From Net: NetName=STAT1 Pin=U3-47
+Added Pin To Net: NetName=STAT1 Pin=U3-4
+Added Pin To Net: NetName=LED_Strip_Leveled Pin=U3-26
+Added Member To Class: ClassName=RobotBoard Member=Component  Header 5X2 Vert

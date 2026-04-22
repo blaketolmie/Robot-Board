@@ -1,0 +1,9 @@
+Remove Pin=U3A-41 From Net=H-BRIDGE FAULT
+Change Pin Designator/Name:  Old Designator=U3A-9 Old Name=AD0/PWMH3/PA17 New Designator =PA28 New Name=38
+Change Pin Designator/Name:  Old Designator=U3A-15 Old Name=PWMH0/PA23 New Designator =PA31 New Name=52
+Change Pin Designator/Name:  Old Designator=U3A-19 Old Name=PWML2/PA16 New Designator =AD0/PWMH3/PA17 New Name=9
+Change Pin Designator/Name:  Old Designator=U3A-23 Old Name=PWMH1/PA24 New Designator =PA29 New Name=41
+Change Pin Designator/Name:  Old Designator=U3A-25 Old Name=PWMH2/PA25 New Designator =PWML2/PA30 New Name=42
+Change Pin Designator/Name:  Old Designator=U3A-38 Old Name=PA28 New Designator =PWMH0/PA23 New Name=15
+Change Pin Designator/Name:  Old Designator=U3A-42 Old Name=PWML2/PA30 New Designator =PWMH1/PA24 New Name=23
+Change Pin Designator/Name:  Old Designator=U3A-52 Old Name=PA31 New Designator =PWMH2/PA25 New Name=25
