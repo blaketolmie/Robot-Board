@@ -29,27 +29,27 @@
 #define USB_CURRENT_MA 500
 
 /* LEDs  */
-#define LED_ERROR_PIO PA20_PIO
-#define LED_STATUS_PIO PA23_PIO
+#define LED_ERROR_PIO PA16_PIO
+#define LED_STATUS_PIO PA15_PIO
 #define LED_ACTIVE 0
 
 /* General  */
-#define APPENDAGE_PIO PA1_PIO
-#define SERVO_PWM_PIO PA2_PIO
+#define APPENDAGE_PIO PA29_PIO
+#define SERVO_PWM_PIO PA30_PIO
 
 /* Button  */
-#define BUTTON_PIO PA16_PIO
+//#define BUTTON_PIO PA16_PIO
 
 /* H-bridges   */
-#define MOTOR_LEFT_PWM_PIO PA11_PIO
-#define MOTOR_RIGHT_PWM_PIO PA7_PIO
+//#define MOTOR_LEFT_PWM_PIO PA11_PIO
+//#define MOTOR_RIGHT_PWM_PIO PA7_PIO
 
 /* Radio  */
-#define RADIO_CS_PIO PA10_PIO
-#define RADIO_CE_PIO PA9_PIO
-#define RADIO_IRQ_PIO PA15_PIO
+//#define RADIO_CS_PIO PA10_PIO
+//#define RADIO_CE_PIO PA9_PIO
+//#define RADIO_IRQ_PIO PA15_PIO
 
 /* LED tape  */
-#define LEDTAPE_PIO PA16_PIO
+//#define LEDTAPE_PIO PA31_PIO
 
 #endif /* TARGET_H  */
