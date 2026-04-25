@@ -1,35 +1,26 @@
-/* File:   ledflash1.c
-   Author: M. P. Hayes, UCECE
-   Date:   15 May 2007
-   Descr:  Flash an LED using a paced loop
-*/
 #include <pio.h>
 #include "target.h"
 #include "pacer.h"
 
 #include <stdint.h>
 
-/* Define PACER rate in Hz.  The minimum is 6 Hz for a 96 MHz CPU clock.  */
 #define PACER_RATE 200
-
-/* Define LED flash rate in Hz.  */
-#define LED_FLASH_RATE 2
-
+#define LED_FLASH_RATE 1
+#define NUM_TOGGLES 12
 
 int
 main (void)
 {
     uint32_t ticks = 0;
+    uint8_t toggles = 0;
 
-    /* Configure STATUS LED PIO as output and set high.  The LED should
-       turn on if wired active-high.  */
+    /* Start LED ON */
     pio_config_set (LED_STATUS_PIO, PIO_OUTPUT_HIGH);
 
     pacer_init (PACER_RATE);
 
-    while (1)
+    while (toggles < NUM_TOGGLES)
     {
-        /* Wait until next clock tick.  */
         pacer_wait ();
 
         ticks++;
@@ -38,8 +29,16 @@ main (void)
         {
             ticks = 0;
 
-            /* Toggle LED.  */
             pio_output_toggle (LED_STATUS_PIO);
+            toggles++;
         }
+    }
+
+    /* Ensure LED ends OFF */
+    pio_output_high (LED_STATUS_PIO);
+
+    while (1)
+    {
+        /* Stop here */
     }
 }

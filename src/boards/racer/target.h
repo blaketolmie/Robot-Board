@@ -16,6 +16,7 @@
 #define MCU_PLL_DIV 1
 
 #define MCU_USB_DIV 2
+
 /* 192 MHz  */
 #define F_PLL (F_XTAL / MCU_PLL_DIV * MCU_PLL_MUL)
 /* 96 MHz  */
@@ -25,31 +26,69 @@
 #define TWI_TIMEOUT_US_DEFAULT 10000
 
 /* USB  */
-//#define USB_VBUS_PIO PA5_PIO
+#define USB_DETECT_PIO PA5_PIO      /* Pin 35  */
+#define USB_VBUS_PIO USB_DETECT_PIO
 #define USB_CURRENT_MA 500
 
-/* LEDs  */
-#define LED_ERROR_PIO PA16_PIO
-#define LED_STATUS_PIO PA15_PIO
+/* Status LEDs / status outputs */
+#define STAT0_PIO PB1_PIO      /* Pin 4  */
+#define STAT1_PIO PA16_PIO     /* Pin 19 */
+#define STAT2_PIO PA15_PIO     /* Pin 20 */
+#define STAT3_PIO PB2_PIO      /* Pin 5  */
+
+/* ERROR and STATUS LED */
+#define LED_ERROR_PIO STAT1_PIO
+#define LED_STATUS_PIO STAT2_PIO
+
+/* Active level low */
 #define LED_ACTIVE 0
 
-/* General  */
-#define APPENDAGE_PIO PA29_PIO
-#define SERVO_PWM_PIO PA30_PIO
+/* Buttons */
+#define BUTTON_PIO PB0_PIO   /* Pin 3 - Button 1 */
+#define BUTTON_PIO2 PB4_PIO   /* Pin 33 - Button 2 */
 
-/* Button  */
-//#define BUTTON_PIO PA16_PIO
+/* DIP switches */
+#define DIP_SW_1_PIO PA17_PIO  /* Pin 9  */
+#define DIP_SW_2_PIO PA18_PIO  /* Pin 10 */
+#define DIP_SW_3_PIO PA21_PIO  /* Pin 11 */
+#define DIP_SW_4_PIO PA22_PIO  /* Pin 14 */
 
-/* H-bridges   */
-//#define MOTOR_LEFT_PWM_PIO PA11_PIO
-//#define MOTOR_RIGHT_PWM_PIO PA7_PIO
+/* H-bridges */
+#define HBRIDGE_ENABLE_PIO PA0_PIO  /* Pin 48 */
+#define MOTOR_LEFT_PWM_PIO PA25_PIO     /* Pin 25, DC1 IN */
+#define MOTOR_LEFT_DIR_PIO PA20_PIO     /* Pin 16, DC1 OUT */
+#define MOTOR_RIGHT_PWM_PIO PA19_PIO    /* Pin 13, DC2 IN */
+#define MOTOR_RIGHT_DIR_PIO PA24_PIO    /* Pin 23, DC2 OUT */
 
-/* Radio  */
-//#define RADIO_CS_PIO PA10_PIO
-//#define RADIO_CE_PIO PA9_PIO
-//#define RADIO_IRQ_PIO PA15_PIO
+/* Power / enable control */
+#define SLEEP_PIO PA2_PIO           /* Pin 44 */
+#define FPV_ENABLE_PIO PA1_PIO      /* Pin 47 */
+#define PGOOD_PIO PA27_PIO          /* Pin 37 */
 
-/* LED tape  */
-//#define LEDTAPE_PIO PA31_PIO
+/* Servos */
+#define SERVO1_PIO PA30_PIO         /* Pin 42 */
+#define SERVO2_PIO PA29_PIO         /* Pin 41 */
 
-#endif /* TARGET_H  */
+/* Original definitions for servos so then template code can still work */
+#define SERVO_PWM_PIO SERVO1_PIO
+#define APPENDAGE_PIO SERVO2_PIO
+
+/* Radio */
+#define RADIO_OFF_PIO PA26_PIO      /* Pin 26 */
+#define RADIO_CS_PIO PA9_PIO        /* Pin 30, RF_CSN */
+#define RADIO_CE_PIO PA8_PIO        /* Pin 31, RF_CE */
+#define RADIO_IRQ_PIO PA7_PIO       /* Pin 32, RF_IRQ */
+
+/* IMU */
+#define IMU_ENABLE_PIO PA10_PIO     /* Pin 29 */
+#define IMU_INT1_PIO PA6_PIO        /* Pin 34 */
+#define IMU_INT2_PIO PA11_PIO       /* Pin 28 */
+
+/* Other inputs / outputs */
+#define BUMPER_PIO PA28_PIO         /* Pin 38 */
+#define BATTERY_MONITOR_PIO PB5_PIO /* Pin 49 */
+
+/* LED strip */
+#define LEDTAPE_PIO PA31_PIO        /* Pin 52, LED strip levelled */
+
+#endif /* TARGET_H */
