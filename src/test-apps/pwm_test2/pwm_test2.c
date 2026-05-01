@@ -99,6 +99,7 @@ int main(void)
         pio_output_low(STAT0_PIO);
 
         pio_output_low(RIGHT_DIR_PIO);
+        pio_output_high(LEFT_DIR_PIO);
 
         pwm_duty_set(left_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 0));
         pwm_duty_set(right_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 0));
