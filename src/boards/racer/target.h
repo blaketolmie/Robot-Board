@@ -48,17 +48,17 @@
 #define BUTTON_PIO2 PB4_PIO   /* Pin 33 - Button 2 */
 
 /* DIP switches */
-#define DIP_SW_1_PIO PA17_PIO  /* Pin 9  */
-#define DIP_SW_2_PIO PA18_PIO  /* Pin 10 */
-#define DIP_SW_3_PIO PA21_PIO  /* Pin 11 */
-#define DIP_SW_4_PIO PA22_PIO  /* Pin 14 */
+#define DIP_SW_4_PIO PA17_PIO  /* Pin 9  */
+#define DIP_SW_3_PIO PA18_PIO  /* Pin 10 */
+#define DIP_SW_2_PIO PA21_PIO  /* Pin 11 */
+#define DIP_SW_1_PIO PA22_PIO  /* Pin 14 */
 
 /* H-bridges */
 #define HBRIDGE_ENABLE_PIO PA0_PIO  /* Pin 48 */
-#define MOTOR_LEFT_PWM_PIO PA25_PIO     /* Pin 25, DC1 IN */
-#define MOTOR_LEFT_DIR_PIO PA20_PIO     /* Pin 16, DC1 OUT */
-#define MOTOR_RIGHT_PWM_PIO PA19_PIO    /* Pin 13, DC2 IN */
-#define MOTOR_RIGHT_DIR_PIO PA24_PIO    /* Pin 23, DC2 OUT */
+#define MOTOR_RIGHT_PWM_PIO PA25_PIO     /* Pin 25, DC1 IN  - AIN1 - PWMH2*/
+#define MOTOR_RIGHT_DIR_PIO PA20_PIO     /* Pin 16, DC1 OUT - AIN2 - PWML1*/
+#define MOTOR_LEFT_PWM_PIO PA19_PIO    /* Pin 13, DC2 IN  - BIN1 - PWML0*/
+#define MOTOR_LEFT_DIR_PIO PA24_PIO    /* Pin 23, DC2 OUT - BIN2 - PWMH1 */
 
 /* Power / enable control */
 #define SLEEP_PIO PA2_PIO           /* Pin 44 */

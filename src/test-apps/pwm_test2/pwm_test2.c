@@ -1,64 +1,110 @@
-/* File:   pwm_test2.c
-   Author: M. P. Hayes, UCECE
-   Date:   15 April 2013
-   Descr:  This example starts two channels simultaneously; one inverted
-           with respect to the other.
-*/
 #include "pwm.h"
 #include "pio.h"
 #include "delay.h"
 #include "panic.h"
+#include "target.h"
 
-#define PWM1_PIO PA1_PIO
-#define PWM2_PIO PA2_PIO
+#define LEFT_PWM_PIO    MOTOR_LEFT_PWM_PIO
+#define LEFT_DIR_PIO    MOTOR_LEFT_DIR_PIO
+#define RIGHT_PWM_PIO   MOTOR_RIGHT_PWM_PIO
+#define RIGHT_DIR_PIO   MOTOR_RIGHT_DIR_PIO
 
-// If you are using PWM to drive a motor you will need
-// to choose a lower frequency!
-#define PWM_FREQ_HZ 100e3
+#define PWM_FREQ_HZ 500
+#define MOTOR_DUTY 50 // Smaller equals bigge
 
-static const pwm_cfg_t pwm1_cfg =
+static const pwm_cfg_t left_pwm_cfg =
 {
-    .pio = PWM1_PIO,
-    .period = PWM_PERIOD_DIVISOR (PWM_FREQ_HZ),
-    .duty = PWM_DUTY_DIVISOR (PWM_FREQ_HZ, 50),
+    .pio = LEFT_PWM_PIO,
+    .period = PWM_PERIOD_DIVISOR(PWM_FREQ_HZ),
+    .duty = PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 0),
     .align = PWM_ALIGN_LEFT,
     .polarity = PWM_POLARITY_HIGH,
     .stop_state = PIO_OUTPUT_LOW
 };
 
-static const pwm_cfg_t pwm2_cfg =
+static const pwm_cfg_t right_pwm_cfg =
 {
-    .pio = PWM2_PIO,
-    .period = PWM_PERIOD_DIVISOR (PWM_FREQ_HZ),
-    .duty = PWM_DUTY_DIVISOR (PWM_FREQ_HZ, 50),
+    .pio = RIGHT_PWM_PIO,
+    .period = PWM_PERIOD_DIVISOR(PWM_FREQ_HZ),
+    .duty = PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 0),
     .align = PWM_ALIGN_LEFT,
     .polarity = PWM_POLARITY_HIGH,
     .stop_state = PIO_OUTPUT_LOW
 };
 
-
-int
-main (void)
+int main(void)
 {
-    pwm_t pwm1;
-    pwm_t pwm2;
+    pwm_t left_pwm;
+    pwm_t right_pwm;
 
-    pio_config_set (LED_STATUS_PIO, PIO_OUTPUT_HIGH);
+    pio_config_set(LED_STATUS_PIO, PIO_OUTPUT_HIGH);
+    pio_config_set(STAT0_PIO, PIO_OUTPUT_HIGH);
+    pio_config_set(STAT1_PIO, PIO_OUTPUT_HIGH);
+    pio_config_set(STAT2_PIO, PIO_OUTPUT_HIGH);
+    pio_config_set(STAT3_PIO, PIO_OUTPUT_HIGH);
 
-    pwm1 = pwm_init (&pwm1_cfg);
-    if (! pwm1)
-        panic (LED_ERROR_PIO, 1);
+    pio_config_set(HBRIDGE_ENABLE_PIO, PIO_OUTPUT_HIGH);
+    pio_output_high(HBRIDGE_ENABLE_PIO);
 
-    pwm2 = pwm_init (&pwm2_cfg);
-    if (! pwm2)
-        panic (LED_ERROR_PIO, 2);
+    pio_config_set(SLEEP_PIO, PIO_OUTPUT_HIGH);
+    pio_output_high(SLEEP_PIO);
 
-    pwm_channels_start (pwm_channel_mask (pwm1) | pwm_channel_mask (pwm2));
+    pio_config_set(LEFT_DIR_PIO, PIO_OUTPUT_LOW);
+    pio_config_set(RIGHT_DIR_PIO, PIO_OUTPUT_LOW);
+
+    left_pwm = pwm_init(&left_pwm_cfg);
+    if (!left_pwm)
+        panic(LED_ERROR_PIO, 1);
+
+    right_pwm = pwm_init(&right_pwm_cfg);
+    if (!right_pwm)
+        panic(LED_ERROR_PIO, 2);
+
+    pwm_channels_start(pwm_channel_mask(left_pwm) | pwm_channel_mask(right_pwm));
 
     while (1)
     {
-        delay_ms (500);
-        pio_output_toggle (LED_STATUS_PIO);
+        /* Forward */
+        pio_output_low(STAT3_PIO);
+        pio_output_high(STAT0_PIO);
+
+        pio_output_low(LEFT_DIR_PIO);
+        pio_output_low(RIGHT_DIR_PIO);
+        pwm_duty_set(left_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, MOTOR_DUTY));
+        pwm_duty_set(right_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, MOTOR_DUTY));
+        delay_ms(5000);
+
+        /* Stop */
+        pio_output_high(STAT3_PIO);
+        pio_output_low(STAT0_PIO);
+
+        pio_output_high(LEFT_DIR_PIO);
+        pio_output_low(RIGHT_DIR_PIO);
+
+        pwm_duty_set(left_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 0));
+        pwm_duty_set(right_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 0));
+        delay_ms(5000);
+
+        /* Reverse */
+        pio_output_low(STAT3_PIO);
+        pio_output_high(STAT0_PIO);
+        pio_output_high(LEFT_DIR_PIO);
+        pio_output_high(RIGHT_DIR_PIO);
+        pwm_duty_set(left_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, MOTOR_DUTY));
+        pwm_duty_set(right_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, MOTOR_DUTY));
+        delay_ms(5000);
+
+        /* Stop */
+        pio_output_high(STAT3_PIO);
+        pio_output_low(STAT0_PIO);
+
+        pio_output_low(RIGHT_DIR_PIO);
+
+        pwm_duty_set(left_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 0));
+        pwm_duty_set(right_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 0));
+        delay_ms(5000);
+
+        pio_output_toggle(LED_STATUS_PIO);
     }
 
     return 0;
