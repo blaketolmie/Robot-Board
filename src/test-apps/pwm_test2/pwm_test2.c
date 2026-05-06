@@ -103,23 +103,17 @@ static void motors_set(pwm_t left_pwm, pwm_t right_pwm,
 
     if (left_command >= 0) { 
         pio_output_low(LEFT_DIR_PIO);
-        // doesnt work
-        // pwm_duty_set(left_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 100-left_duty));
         left_duty = 100 - left_duty;
     }
 
     else {
         pio_output_high(LEFT_DIR_PIO);
-        // pwm_duty_set(left_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, left_duty));
     }
     if (right_command >= 0) {
         pio_output_low(RIGHT_DIR_PIO);
-        // pwm_duty_set(right_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, right_duty));
     }
     else {
         pio_output_high(RIGHT_DIR_PIO);
-        // doesnt work
-        // pwm_duty_set(right_pwm, PWM_DUTY_DIVISOR(PWM_FREQ_HZ, 100-right_duty));
         right_duty = 100 - right_duty;
     }
 
