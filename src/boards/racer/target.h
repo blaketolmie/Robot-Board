@@ -32,13 +32,13 @@
 
 /* Status LEDs / status outputs */
 #define STAT0_PIO PB1_PIO      /* Pin 4  */
-#define STAT1_PIO PA16_PIO     /* Pin 19 */
-#define STAT2_PIO PA15_PIO     /* Pin 20 */
+#define STAT1_PIO PA16_PIO     /* Pin 19 - Green */
+#define STAT2_PIO PA15_PIO     /* Pin 20 - Red */
 #define STAT3_PIO PB2_PIO      /* Pin 5  */
 
 /* ERROR and STATUS LED */
-#define LED_ERROR_PIO STAT1_PIO
-#define LED_STATUS_PIO STAT2_PIO
+#define LED_STATUS_PIO STAT1_PIO   // Green
+#define LED_ERROR_PIO STAT2_PIO    // Red
 
 /* Active level low */
 #define LED_ACTIVE 0

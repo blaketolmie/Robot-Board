@@ -9,7 +9,7 @@
 #include "delay.h"
 #include "panic.h"
 
-#define RADIO_CHANNEL 4
+#define RADIO_CHANNEL 5
 #define RADIO_ADDRESS 0x0123456789LL
 #define RADIO_PAYLOAD_SIZE 32
 
@@ -35,18 +35,22 @@ int main(void)
             .irq_pio = RADIO_IRQ_PIO,
             .spi = spi_cfg,
         };
+    
     nrf24_t *nrf;
 
     // Configure LED PIO as output.
-    pio_config_set (LED_ERROR_PIO, PIO_OUTPUT_LOW);
-    pio_config_set (LED_STATUS_PIO, PIO_OUTPUT_HIGH);
+    pio_config_set (LED_ERROR_PIO, PIO_OUTPUT_HIGH);
+    pio_config_set (LED_STATUS_PIO, PIO_OUTPUT_LOW);
+
+    // pio_config_set(RADIO_OFF_PIO, PIO_OUTPUT_HIGH);
+    // pio_output_high(RADIO_OFF_PIO);
 
     // Redirect stdio to USB serial.
     usb_serial_stdio_init ();
 
-#ifdef RADIO_POWER_ENABLE_PIO
+#ifdef RADIO_OFF_PIO
     // Enable radio regulator if present.
-    pio_config_set (RADIO_POWER_ENABLE_PIO, PIO_OUTPUT_HIGH);
+    pio_config_set (RADIO_OFF_PIO, PIO_OUTPUT_HIGH);
     delay_ms (10);
 #endif
 
@@ -54,16 +58,20 @@ int main(void)
     if (! nrf)
         panic (LED_ERROR_PIO, 2);
 
+    // printf("\r\n1\r\n");
+    // fflush(stdout);
+
+
     while(1)
     {
         char buffer[RADIO_PAYLOAD_SIZE + 1];
         uint8_t bytes;
-
         bytes = nrf24_read (nrf, buffer, RADIO_PAYLOAD_SIZE);
         if (bytes != 0)
         {
             buffer[bytes] = 0;
             printf ("%s\n", buffer);
+            fflush(stdout);
             pio_output_toggle (LED_STATUS_PIO);
         }
     }
