@@ -26,8 +26,8 @@
 #define TWI_TIMEOUT_US_DEFAULT 10000
 
 /* USB  */
-#define USB_DETECT_PIO PA5_PIO      /* Pin 35  */
-#define USB_VBUS_PIO USB_DETECT_PIO
+// #define USB_DETECT_PIO PA5_PIO      /* Pin 35  */
+//#define USB_VBUS_PIO USB_DETECT_PIO
 #define USB_CURRENT_MA 500
 
 /* Status LEDs / status outputs */
