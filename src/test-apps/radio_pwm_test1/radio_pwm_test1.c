@@ -13,7 +13,7 @@
 
 static const button_cfg_t button_cfg =
 {
-    .pio = BUTTON_PIO
+    .pio = BUMPER_PIO // BUMPER_PIO   BUTTON_PIO
 };
 
 static void print_startup(void)

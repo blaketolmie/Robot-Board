@@ -119,7 +119,7 @@ void racer_motors_set(racer_motors_t *motors,
     }
 
     /*
-       Direction logic matches your working code:
+       Direction logic
 
        Forward:
            LEFT_DIR  LOW
