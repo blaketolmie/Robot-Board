@@ -11,7 +11,7 @@ static void low_voltage_led_set(bool on)
 
 void racer_low_voltage_init(void)
 {
-    pio_config_set(BATTERY_MONITOR_PIO, PIO_PULLUP);
+    pio_config_set(BATTERY_MONITOR_PIO, PIO_PULLDOWN);
     pio_config_set(LOW_VOLTAGE_LED_PIO, PIO_OUTPUT_HIGH);
     low_voltage_led_set(false);
 }
