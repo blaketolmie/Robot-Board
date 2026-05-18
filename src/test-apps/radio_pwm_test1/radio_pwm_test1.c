@@ -8,20 +8,24 @@
 #include "target.h"
 #include "racer_motors.h"
 #include "radio_link.h"
+#include "racer_sleep.h"
+#include "racer_radio_channel.h"
+#include "racer_low_voltage.h"
+#include "racer_heartbeat.h"
+#include "racer_bumper.h"
+#include "racer_ledtape.h"
+#include "racer_power.h"
 
 #define BUTTON_POLL_RATE 100
-
-static const button_cfg_t button_cfg =
-{
-    .pio = BUMPER_PIO // BUMPER_PIO   BUTTON_PIO
-};
 
 static void print_startup(void)
 {
     printf("\r\nWacky Racer radio PWM motor control ready.\r\n");
     printf("RX input format: left right\r\n");
     printf("Duty range: -100 to 100\r\n");
-    printf("Button sends STOP to the hat and stops the motors\r\n");
+    printf("BUMPER_PIO sends STOP and disables the H-bridge for 5 seconds\r\n");
+    printf("SLEEP_PIO toggles MCU sleep on/off\r\n");
+    printf("DIP switches choose radio channel: base 84 plus DIP value\r\n");
     fflush(stdout);
 }
 
@@ -34,7 +38,6 @@ static void process_radio_command(racer_motors_t *motors, const char *buffer)
     {
         printf("RX: %s\r\n", buffer);
         racer_motors_set(motors, left_command, right_command);
-        pio_output_toggle(LED_STATUS_PIO);
     }
     else
     {
@@ -46,12 +49,17 @@ static void process_radio_command(racer_motors_t *motors, const char *buffer)
 int main(void)
 {
     racer_motors_t motors;
+    racer_sleep_t sleep;
+    racer_bumper_t bumper;
+    racer_ledtape_t ledtape;
     nrf24_t *nrf;
-    button_t button;
+    uint8_t radio_channel;
     int error;
 
-    pio_config_set(LED_STATUS_PIO, PIO_OUTPUT_HIGH);
-    pio_config_set(LED_ERROR_PIO, PIO_OUTPUT_HIGH);
+    racer_power_init();
+    racer_radio_channel_init();
+    racer_low_voltage_init();
+    racer_heartbeat_init();
 
     error = racer_motors_init(&motors);
     if (error)
@@ -59,18 +67,29 @@ int main(void)
 
     usb_serial_stdio_init();
 
-    nrf = radio_link_init();
+    radio_channel = racer_radio_channel_get();
+    nrf = radio_link_init(radio_channel);
     if (! nrf)
         panic(LED_ERROR_PIO, 3);
 
-    button = button_init(&button_cfg);
-    if (! button)
-        panic(LED_ERROR_PIO, 4);
+    error = racer_sleep_init(&sleep);
+    if (error)
+        panic(LED_ERROR_PIO, 5);
+
+    error = racer_bumper_init(&bumper);
+    if (error)
+        panic(LED_ERROR_PIO, 6);
+
+    error = racer_ledtape_init(&ledtape);
+    if (error)
+        panic(LED_ERROR_PIO, 7);
 
     button_poll_count_set(BUTTON_POLL_COUNT(BUTTON_POLL_RATE));
     pacer_init(BUTTON_POLL_RATE);
 
     print_startup();
+    printf("Radio channel: %u\r\n", radio_channel);
+    fflush(stdout);
 
     while (1)
     {
@@ -78,11 +97,36 @@ int main(void)
 
         pacer_wait();
 
-        button_poll(button);
-        if (button_pushed_p(button))
+        racer_heartbeat_update();
+        racer_low_voltage_update();
+        racer_ledtape_update(&ledtape);
+
+        if (racer_bumper_update(&bumper))
         {
             racer_motors_stop(&motors);
             radio_link_stop_send(nrf);
+        }
+
+        racer_sleep_poll(&sleep);
+
+        if (racer_sleep_toggle_requested_p(&sleep))
+        {
+            racer_motors_stop(&motors);
+            racer_ledtape_set(&ledtape, false);
+            racer_power_sleep_enter();
+            racer_sleep_toggle(&sleep);
+            racer_power_sleep_exit();
+            racer_bumper_reset(&bumper);
+            racer_ledtape_set(&ledtape, true);
+
+            radio_channel = racer_radio_channel_get();
+            nrf = radio_link_init(radio_channel);
+            if (! nrf)
+                panic(LED_ERROR_PIO, 8);
+
+            printf("Radio channel: %u\r\n", radio_channel);
+            fflush(stdout);
+            continue;
         }
 
         if (radio_link_read(nrf, buffer))

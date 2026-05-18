@@ -63,9 +63,6 @@ int racer_motors_init(racer_motors_t *motors)
     pio_config_set(HBRIDGE_ENABLE_PIO, PIO_OUTPUT_HIGH);
     pio_output_high(HBRIDGE_ENABLE_PIO);
 
-    pio_config_set(SLEEP_PIO, PIO_OUTPUT_HIGH);
-    pio_output_high(SLEEP_PIO);
-
     pio_config_set(LEFT_DIR_PIO, PIO_OUTPUT_LOW);
     pio_config_set(RIGHT_DIR_PIO, PIO_OUTPUT_LOW);
 

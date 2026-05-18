@@ -5,11 +5,10 @@
 #include "delay.h"
 #include "target.h"
 
-#define RADIO_CHANNEL 84
 #define RADIO_ADDRESS 0x0123456789LL
 #define STOP_MESSAGE "STOP"
 
-nrf24_t *radio_link_init(void)
+nrf24_t *radio_link_init(uint8_t channel)
 {
     spi_cfg_t spi_cfg =
     {
@@ -22,7 +21,7 @@ nrf24_t *radio_link_init(void)
     };
     nrf24_cfg_t nrf24_cfg =
     {
-        .channel = RADIO_CHANNEL,
+        .channel = channel,
         .address = RADIO_ADDRESS,
         .payload_size = RADIO_PAYLOAD_SIZE,
         .ce_pio = RADIO_CE_PIO,
