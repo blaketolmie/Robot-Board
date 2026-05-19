@@ -90,5 +90,6 @@
 
 /* LED strip */
 #define LEDTAPE_PIO PA31_PIO        /* Pin 52, LED strip levelled */
+#define LED_STRIP_NUMBER 18          /* Number of LEDs fitted to the strip */
 
 #endif /* TARGET_H */

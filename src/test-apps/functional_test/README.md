@@ -64,14 +64,14 @@ The code is split into small modules so each part has one job.
 
 `racer_heartbeat.c` blinks an LED so it is obvious the main loop is still running.
 
-`racer_ledtape.c` drives the LED tape. The tape is on while the board is awake and off in sleep mode.
+`racer_ledtape.c` drives the LED tape. The tape is soft green while the board is awake, turns off in sleep mode, and changes to a moving rainbow pattern when `BUTTON_PIO2` is pushed.
 
 ## Building The App
 
 From this folder:
 
 ```powershell
-cd "C:\Users\911BL\OneDrive - University of Canterbury\2026\ENCE461\Wacky Racers\Robot-Board\src\test-apps\radio_pwm_test1"
+cd "C:\Users\911BL\OneDrive - University of Canterbury\2026\ENCE461\Wacky Racers\Robot-Board\src\test-apps\functional_test"
 $env:BOARD = "racer"
 mingw32-make
 ```
@@ -90,6 +90,7 @@ RX input format: left right
 Duty range: -100 to 100
 BUMPER_PIO sends STOP and disables the H-bridge for 5 seconds
 SLEEP_PIO toggles MCU sleep on/off
+BUTTON_PIO2 starts the LED tape rainbow pattern
 DIP switches choose radio channel: base 84 plus DIP value
 Radio channel: ...
 ```
@@ -256,7 +257,7 @@ There are a few different LEDs doing different jobs.
 | --- | --- |
 | `LED_STATUS_PIO` | heartbeat LED, shows the program is running |
 | `LED_ERROR_PIO` | low-voltage LED |
-| LED tape | on while awake, off while sleeping |
+| LED tape | soft green while awake, rainbow after `BUTTON_PIO2`, off while sleeping |
 
 The heartbeat LED should blink while the board is awake. It should turn off during sleep mode.
 
@@ -271,12 +272,17 @@ BATTERY_MONITOR_PIO high = low voltage LED off
 
 The LED tape is driven from `LEDTAPE_PIO`.
 
-In this test app the LED tape is simple on purpose:
+In this test app the LED tape has two awake modes:
 
 ```text
-awake = soft green
-sleep = off
+normal awake = soft green
+BUTTON_PIO2 = moving rainbow pattern
+sleep        = off
 ```
+
+`BUTTON_PIO2` is used because the current app is already using `BUMPER_PIO` for bumper/STOP and `SLEEP_PIO` for sleep mode.
+
+The number of LEDs comes from `LED_STRIP_NUMBER` in `src\boards\racer\target.h`. It is currently set to `5`.
 
 The code uses the same idea as the `ledtape_test1` and `ledtape_test2` apps:
 
@@ -285,7 +291,7 @@ The code uses the same idea as the `ledtape_test1` and `ledtape_test2` apps:
 3. Send the buffer to the tape with `ledbuffer_write()`.
 4. Clear the buffer before sleep so the tape turns off.
 
-If the number of LEDs on the tape is different, change `NUM_LEDS` in `racer_ledtape.c`.
+If the number of LEDs on the tape is different, change `LED_STRIP_NUMBER` in `src\boards\racer\target.h`.
 
 ## Main Loop Order
 
@@ -295,7 +301,7 @@ Each loop does roughly this:
 
 1. Blink/update the heartbeat LED.
 2. Check the low-voltage input.
-3. Keep the LED tape refreshed.
+3. Keep the LED tape refreshed and check the LED pattern button.
 4. Check the bumper.
 5. Check the sleep button.
 6. Read a radio packet.
@@ -336,7 +342,8 @@ If the low-voltage LED is backwards:
 If the LED tape is wrong:
 
 - Check `LEDTAPE_PIO`.
-- Check `NUM_LEDS` in `racer_ledtape.c`.
+- Check `LED_STRIP_NUMBER` in `src\boards\racer\target.h`.
+- Check that `BUTTON_PIO2` is the button you are pressing for rainbow mode.
 - Check that the tape has power.
 - Remember the tape is meant to turn off in sleep mode.
 
@@ -350,7 +357,7 @@ If the LED tape is wrong:
 6. Send `0 0` and check the motors stop.
 7. Push the bumper and check the H-bridge turns off for 5 seconds.
 8. Check the hat receives the `STOP` message.
-9. Press the sleep button once and check LEDs and LED tape turn off.
-10. Release the sleep button and check it stays asleep.
-11. Press the sleep button again and check it wakes up.
-
+9. Press `BUTTON_PIO2` and check the LED tape starts the rainbow pattern.
+10. Press the sleep button once and check LEDs and LED tape turn off.
+11. Release the sleep button and check it stays asleep.
+12. Press the sleep button again and check it wakes up.

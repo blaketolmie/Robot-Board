@@ -25,6 +25,7 @@ static void print_startup(void)
     printf("Duty range: -100 to 100\r\n");
     printf("BUMPER_PIO sends STOP and disables the H-bridge for 5 seconds\r\n");
     printf("SLEEP_PIO toggles MCU sleep on/off\r\n");
+    printf("BUTTON_PIO2 starts the LED tape rainbow pattern\r\n");
     printf("DIP switches choose radio channel: base 84 plus DIP value\r\n");
     fflush(stdout);
 }
