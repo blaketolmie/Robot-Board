@@ -39,7 +39,6 @@ void racer_power_sleep_exit(void)
     board_leds_set(false);
 
     pio_output_high(HBRIDGE_ENABLE_PIO);
-    pio_output_high(FPV_ENABLE_PIO);
     pio_output_high(RADIO_OFF_PIO);
     pio_output_high(IMU_ENABLE_PIO);
 

@@ -66,6 +66,8 @@ The code is split into small modules so each part has one job.
 
 `racer_ledtape.c` drives the LED tape. The tape is soft green while the board is awake, turns off in sleep mode, and cycles through green, red, blue, rainbow, blocks, and off when `BUTTON_PIO2` is pushed.
 
+`racer_fpv.c` uses the spare `BUTTON_PIO` button to toggle the FPV output on and off.
+
 ## Building The App
 
 From this folder:
@@ -90,6 +92,7 @@ RX input format: left right
 Duty range: -100 to 100
 BUMPER_PIO sends STOP and disables the H-bridge for 5 seconds
 SLEEP_PIO toggles MCU sleep on/off
+BUTTON_PIO toggles FPV on/off
 BUTTON_PIO2 cycles LED tape: green, red, blue, rainbow, blocks, off
 DIP switches choose radio channel: base 84 plus DIP value
 Radio channel: ...
@@ -247,7 +250,27 @@ When sleep mode starts, the code turns off things that waste power:
 
 When the board wakes up, these outputs are turned back on and the radio is set up again.
 
+FPV is slightly different because it has its own button toggle. Sleep mode always turns `FPV_ENABLE_PIO` off, but when the board wakes up it restores the FPV state chosen with `BUTTON_PIO`.
+
 `SLEEP_PIO` itself is not driven high or low by the program because it is being used as the pushbutton input.
+
+## FPV Button
+
+`BUTTON_PIO` is the spare button, and this app uses it for FPV.
+
+```text
+press BUTTON_PIO once  = FPV off
+press BUTTON_PIO again = FPV on
+```
+
+The serial output prints:
+
+```text
+FPV ON using BUTTON_PIO
+FPV OFF using BUTTON_PIO
+```
+
+The FPV state is remembered while the program is running. If FPV is off before sleep, it should stay off after wake. If FPV is on before sleep, sleep turns it off temporarily, then wake turns it back on.
 
 ## LEDs
 
@@ -316,10 +339,11 @@ Each loop does roughly this:
 1. Blink/update the heartbeat LED.
 2. Check the low-voltage input.
 3. Keep the LED tape refreshed and check the LED pattern button.
-4. Check the bumper.
-5. Check the sleep button.
-6. Read a radio packet.
-7. If the radio packet is valid, update the motors.
+4. Check the FPV button.
+5. Check the bumper.
+6. Check the sleep button.
+7. Read a radio packet.
+8. If the radio packet is valid, update the motors.
 
 Keeping this loop simple makes it easier to debug because each module only does one small job.
 
@@ -362,6 +386,12 @@ If the LED tape is wrong:
 - Check that the tape has power.
 - Remember the tape is meant to turn off in sleep mode.
 
+If FPV does not toggle:
+
+- Check that you are pressing `BUTTON_PIO`, not `BUTTON_PIO2`.
+- Check `FPV_ENABLE_PIO`.
+- Remember sleep mode forces FPV off while sleeping.
+
 ## Quick Test Checklist
 
 1. Build and flash the racer app.
@@ -374,6 +404,8 @@ If the LED tape is wrong:
 8. Check the hat receives the `STOP` message.
 9. Press `BUTTON_PIO2` and check the LED tape changes to red.
 10. Keep pressing `BUTTON_PIO2` and check it cycles blue, rainbow, blocks, off, then green.
-11. Press the sleep button once and check LEDs and LED tape turn off.
-12. Release the sleep button and check it stays asleep.
-13. Press the sleep button again and check it wakes up.
+11. Press `BUTTON_PIO` and check FPV toggles off.
+12. Press `BUTTON_PIO` again and check FPV toggles on.
+13. Press the sleep button once and check LEDs, LED tape, and FPV turn off.
+14. Release the sleep button and check it stays asleep.
+15. Press the sleep button again and check it wakes up.

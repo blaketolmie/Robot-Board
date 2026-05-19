@@ -15,6 +15,7 @@
 #include "racer_bumper.h"
 #include "racer_ledtape.h"
 #include "racer_power.h"
+#include "racer_fpv.h"
 
 #define BUTTON_POLL_RATE 100
 
@@ -25,6 +26,7 @@ static void print_startup(void)
     printf("Duty range: -100 to 100\r\n");
     printf("BUMPER_PIO sends STOP and disables the H-bridge for 5 seconds\r\n");
     printf("SLEEP_PIO toggles MCU sleep on/off\r\n");
+    printf("BUTTON_PIO toggles FPV on/off\r\n");
     printf("BUTTON_PIO2 cycles LED tape: green, red, blue, rainbow, blocks, off\r\n");
     printf("DIP switches choose radio channel: base 84 plus DIP value\r\n");
     fflush(stdout);
@@ -53,6 +55,7 @@ int main(void)
     racer_sleep_t sleep;
     racer_bumper_t bumper;
     racer_ledtape_t ledtape;
+    racer_fpv_t fpv;
     nrf24_t *nrf;
     uint8_t radio_channel;
     int error;
@@ -85,6 +88,10 @@ int main(void)
     if (error)
         panic(LED_ERROR_PIO, 7);
 
+    error = racer_fpv_init(&fpv);
+    if (error)
+        panic(LED_ERROR_PIO, 9);
+
     button_poll_count_set(BUTTON_POLL_COUNT(BUTTON_POLL_RATE));
     pacer_init(BUTTON_POLL_RATE);
 
@@ -101,6 +108,7 @@ int main(void)
         racer_heartbeat_update();
         racer_low_voltage_update();
         racer_ledtape_update(&ledtape);
+        racer_fpv_update(&fpv);
 
         if (racer_bumper_update(&bumper))
         {
@@ -118,6 +126,7 @@ int main(void)
             racer_power_sleep_enter();
             racer_sleep_wait_for_wake(&sleep);
             racer_power_sleep_exit();
+            racer_fpv_apply(&fpv);
             racer_bumper_reset(&bumper);
             racer_ledtape_set(&ledtape, true);
             racer_sleep_finish(&sleep);
