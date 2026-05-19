@@ -64,7 +64,7 @@ The code is split into small modules so each part has one job.
 
 `racer_heartbeat.c` blinks an LED so it is obvious the main loop is still running.
 
-`racer_ledtape.c` drives the LED tape. The tape is soft green while the board is awake, turns off in sleep mode, and changes to a moving rainbow pattern when `BUTTON_PIO2` is pushed.
+`racer_ledtape.c` drives the LED tape. The tape is soft green while the board is awake, turns off in sleep mode, and cycles through green, red, blue, rainbow, blocks, and off when `BUTTON_PIO2` is pushed.
 
 ## Building The App
 
@@ -90,7 +90,7 @@ RX input format: left right
 Duty range: -100 to 100
 BUMPER_PIO sends STOP and disables the H-bridge for 5 seconds
 SLEEP_PIO toggles MCU sleep on/off
-BUTTON_PIO2 starts the LED tape rainbow pattern
+BUTTON_PIO2 cycles LED tape: green, red, blue, rainbow, blocks, off
 DIP switches choose radio channel: base 84 plus DIP value
 Radio channel: ...
 ```
@@ -225,12 +225,12 @@ In WAIT mode:
 
 1. The CPU stops running while asleep.
 2. The wakeup pin can wake the MCU.
-3. After wakeup, the code continues from after the `mcu_sleep()` call.
+3. After wakeup, the code continues from after the WAIT mode command.
 4. It does not restart from the beginning of `main()`.
 
 This is different from BACKUP mode. BACKUP mode saves more power, but waking from BACKUP mode is more like pressing the reset button. The program starts again from the start of `main()`.
 
-There is commented code in `racer_sleep.c` showing where to change the mode to BACKUP later if needed.
+For WAIT mode, `racer_sleep.c` enables the SAM4S PMC fast startup input for WKUP2. There is also commented code in `racer_sleep.c` showing how BACKUP mode could be used later if needed.
 
 ## What Turns Off In Sleep Mode
 
@@ -257,7 +257,7 @@ There are a few different LEDs doing different jobs.
 | --- | --- |
 | `LED_STATUS_PIO` | heartbeat LED, shows the program is running |
 | `LED_ERROR_PIO` | low-voltage LED |
-| LED tape | soft green while awake, rainbow after `BUTTON_PIO2`, off while sleeping |
+| LED tape | cycles green/red/blue/rainbow/blocks/off with `BUTTON_PIO2`, off while sleeping |
 
 The heartbeat LED should blink while the board is awake. It should turn off during sleep mode.
 
@@ -272,13 +272,27 @@ BATTERY_MONITOR_PIO high = low voltage LED off
 
 The LED tape is driven from `LEDTAPE_PIO`.
 
-In this test app the LED tape has two awake modes:
+In this test app the LED tape has six modes:
 
 ```text
-normal awake = soft green
-BUTTON_PIO2 = moving rainbow pattern
-sleep        = off
+green
+red
+blue
+rainbow
+blocks
+off
 ```
+
+Each press of `BUTTON_PIO2` moves to the next mode. After `off`, the next press goes back to green.
+
+The blocks mode is meant to look a bit like Tetris on a 1D LED strip:
+
+1. A coloured block starts at the first LED.
+2. It drops along the strip one LED at a time.
+3. It lands at the end and stays there.
+4. More blocks drop until the strip is full.
+5. When the strip is full it does a rainbow celebration.
+6. After the celebration it clears and starts dropping blocks again.
 
 `BUTTON_PIO2` is used because the current app is already using `BUMPER_PIO` for bumper/STOP and `SLEEP_PIO` for sleep mode.
 
@@ -343,7 +357,8 @@ If the LED tape is wrong:
 
 - Check `LEDTAPE_PIO`.
 - Check `LED_STRIP_NUMBER` in `src\boards\racer\target.h`.
-- Check that `BUTTON_PIO2` is the button you are pressing for rainbow mode.
+- Check that `BUTTON_PIO2` is the button you are pressing for LED tape mode changes.
+- Keep pressing `BUTTON_PIO2` to cycle through green, red, blue, rainbow, blocks, off, then back to green.
 - Check that the tape has power.
 - Remember the tape is meant to turn off in sleep mode.
 
@@ -357,7 +372,8 @@ If the LED tape is wrong:
 6. Send `0 0` and check the motors stop.
 7. Push the bumper and check the H-bridge turns off for 5 seconds.
 8. Check the hat receives the `STOP` message.
-9. Press `BUTTON_PIO2` and check the LED tape starts the rainbow pattern.
-10. Press the sleep button once and check LEDs and LED tape turn off.
-11. Release the sleep button and check it stays asleep.
-12. Press the sleep button again and check it wakes up.
+9. Press `BUTTON_PIO2` and check the LED tape changes to red.
+10. Keep pressing `BUTTON_PIO2` and check it cycles blue, rainbow, blocks, off, then green.
+11. Press the sleep button once and check LEDs and LED tape turn off.
+12. Release the sleep button and check it stays asleep.
+13. Press the sleep button again and check it wakes up.

@@ -14,6 +14,8 @@ typedef struct
 int racer_sleep_init(racer_sleep_t *sleep);
 void racer_sleep_poll(racer_sleep_t *sleep);
 bool racer_sleep_toggle_requested_p(racer_sleep_t *sleep);
-void racer_sleep_toggle(racer_sleep_t *sleep);
+void racer_sleep_arm(racer_sleep_t *sleep);
+void racer_sleep_wait_for_wake(racer_sleep_t *sleep);
+void racer_sleep_finish(racer_sleep_t *sleep);
 
 #endif

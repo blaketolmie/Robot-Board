@@ -25,7 +25,7 @@ static void print_startup(void)
     printf("Duty range: -100 to 100\r\n");
     printf("BUMPER_PIO sends STOP and disables the H-bridge for 5 seconds\r\n");
     printf("SLEEP_PIO toggles MCU sleep on/off\r\n");
-    printf("BUTTON_PIO2 starts the LED tape rainbow pattern\r\n");
+    printf("BUTTON_PIO2 cycles LED tape: green, red, blue, rainbow, blocks, off\r\n");
     printf("DIP switches choose radio channel: base 84 plus DIP value\r\n");
     fflush(stdout);
 }
@@ -113,12 +113,14 @@ int main(void)
         if (racer_sleep_toggle_requested_p(&sleep))
         {
             racer_motors_stop(&motors);
+            racer_sleep_arm(&sleep);
             racer_ledtape_set(&ledtape, false);
             racer_power_sleep_enter();
-            racer_sleep_toggle(&sleep);
+            racer_sleep_wait_for_wake(&sleep);
             racer_power_sleep_exit();
             racer_bumper_reset(&bumper);
             racer_ledtape_set(&ledtape, true);
+            racer_sleep_finish(&sleep);
 
             radio_channel = racer_radio_channel_get();
             nrf = radio_link_init(radio_channel);
